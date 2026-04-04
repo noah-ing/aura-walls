@@ -32,7 +32,7 @@ targets:
         INFOPLIST_KEY_CFBundleDisplayName: "Aura Walls"
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
-        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        TARGETED_DEVICE_FAMILY: "1"
         INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.lifestyle"
         SWIFT_STRICT_CONCURRENCY: complete
         SWIFT_VERSION: "5.9"
