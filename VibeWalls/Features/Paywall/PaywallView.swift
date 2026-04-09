@@ -38,7 +38,8 @@ struct PaywallView: View {
                         VStack(alignment: .leading, spacing: 16) {
                             featureRow(icon: "infinity", text: "Unlimited saves to Photos")
                             featureRow(icon: "eye.slash", text: "No ads, ever")
-                            featureRow(icon: "square.grid.2x2.fill", text: "All 60+ premium wallpapers")
+                            featureRow(icon: "wand.and.sparkles", text: "AI wallpaper generator")
+                            featureRow(icon: "square.grid.2x2.fill", text: "200+ premium wallpapers")
                             featureRow(icon: "arrow.triangle.2.circlepath", text: "New wallpapers added regularly")
                         }
                         .padding(.horizontal, Theme.paddingLg)
@@ -78,13 +79,27 @@ struct PaywallView: View {
                         .font(.subheadline)
                         .foregroundStyle(Theme.textSecondary)
 
-                        // Legal
-                        Text("Auto-renewable subscription. Cancel anytime in Settings. Payment charged to your Apple ID. Subscription renews automatically unless cancelled at least 24 hours before the end of the current period.")
-                            .font(.caption2)
-                            .foregroundStyle(Theme.textSecondary.opacity(0.6))
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, Theme.paddingLg)
-                            .padding(.bottom, Theme.paddingLg)
+                        // Subscription details (required by Apple)
+                        VStack(spacing: 6) {
+                            Text("Aura Walls Pro — $2.99/week")
+                                .font(.caption.bold())
+                                .foregroundStyle(Theme.textSecondary)
+
+                            Text("Auto-renewable weekly subscription. Payment charged to your Apple ID at confirmation. Subscription renews automatically at $2.99/week unless cancelled at least 24 hours before the end of the current period. Manage or cancel anytime in Settings → Apple ID → Subscriptions.")
+                                .font(.caption2)
+                                .foregroundStyle(Theme.textSecondary.opacity(0.6))
+                                .multilineTextAlignment(.center)
+                        }
+                        .padding(.horizontal, Theme.paddingLg)
+
+                        // Legal links (required by Apple)
+                        HStack(spacing: 16) {
+                            Link("Terms of Use", destination: URL(string: "https://noah-ing.github.io/aura-walls/#terms")!)
+                            Link("Privacy Policy", destination: URL(string: "https://noah-ing.github.io/aura-walls/#privacy")!)
+                        }
+                        .font(.caption2)
+                        .foregroundStyle(Theme.accent)
+                        .padding(.bottom, Theme.paddingLg)
                     }
                 }
             }
